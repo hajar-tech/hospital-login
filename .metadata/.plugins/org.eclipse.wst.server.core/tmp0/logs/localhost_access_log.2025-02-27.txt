@@ -1,0 +1,17 @@
+127.0.0.1 - - [27/Feb/2025:12:07:29 +0000] "GET / HTTP/1.1" 404 681
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:12:07:30 +0000] "GET /Hospital/registration.jsp HTTP/1.1" 200 1236
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:12:11:09 +0000] "GET /Hospital/registration.jsp HTTP/1.1" 200 1236
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:12:16:39 +0000] "GET /Hospital/ HTTP/1.1" 200 1987
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:12:19:06 +0000] "GET /Hospital/register.jsp HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:12:19:31 +0000] "GET /Hospital/ HTTP/1.1" 200 1987
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:12:19:34 +0000] "GET /Hospital/register.jsp HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:12:20:46 +0000] "GET /Hospital/ HTTP/1.1" 200 1991
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:12:20:48 +0000] "GET /Hospital/registration.jsp HTTP/1.1" 200 3587
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:12:23:32 +0000] "GET /MediCare/DeleteAppointement?idRendezVous=13 HTTP/1.1" 404 712
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:15:34:16 +0000] "GET /Hospital/ HTTP/1.1" 500 2643
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:15:34:19 +0000] "GET /Hospital/ HTTP/1.1" 500 2881
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:15:39:11 +0000] "GET /Hospital/ HTTP/1.1" 500 2643
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:15:39:41 +0000] "GET /Hospital/ HTTP/1.1" 200 1868
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:15:40:57 +0000] "GET /Hospital/registration.jsp HTTP/1.1" 200 3587
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:15:41:05 +0000] "GET /Hospital/login.jsp HTTP/1.1" 200 1987
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:15:41:28 +0000] "POST /Hospital/LoginServlet HTTP/1.1" 404 706

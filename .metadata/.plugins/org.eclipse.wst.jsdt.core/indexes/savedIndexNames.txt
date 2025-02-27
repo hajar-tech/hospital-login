@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\zerho\Desktop\Registration-Login\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4254064382.index
+3483915355.index
+2897859496.index
+3423519526.index
+1835533703.index
+2878585463.index
+1728258869.index

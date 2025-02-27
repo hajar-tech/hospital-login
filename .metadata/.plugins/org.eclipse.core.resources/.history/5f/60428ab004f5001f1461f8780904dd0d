@@ -1,0 +1,48 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="RegisterServlet" method="post">
+    <label>Nom Complet:</label>
+    <input type="text" name="fullName" required><br>
+
+    <label>Email:</label>
+    <input type="email" name="email" required><br>
+
+    <label>Mot de Passe:</label>
+    <input type="password" name="password" required><br>
+
+    <label>Numéro de Téléphone:</label>
+    <input type="text" name="phoneNumber" required><br>
+
+    <label>Rôle:</label>
+    <select name="role" id="role" onchange="toggleSpeciality()">
+        <option value="PATIENT">Patient</option>
+        <option value="DOCTOR">Médecin</option>
+    </select><br>
+
+    <div id="specialityField" style="display: none;">
+        <label>Spécialisation:</label>
+        <input type="text" name="speciality"><br>
+    </div>
+
+    <input type="submit" value="S'inscrire">
+</form>
+
+<script>
+function toggleSpeciality() {
+    var role = document.getElementById("role").value;
+    var specialityField = document.getElementById("specialityField");
+    specialityField.style.display = (role === "DOCTOR") ? "block" : "none";
+}
+</script>
+
+
+</body>
+</html>
