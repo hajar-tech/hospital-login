@@ -7,8 +7,8 @@
     String role = (String) session.getAttribute("role");
 String fullName = (String) session.getAttribute("fullName"); 
 out.println("Debug - Session ID : " + session.getId() + "<br>");
-out.println("Role récupéré : " + session.getAttribute("role") + "<br>");
-out.println("FullName récupéré : " + session.getAttribute("fullName") + "<br>");
+out.println("🟢 Role récupéré : " + session.getAttribute("role") + "<br>");
+out.println("🟢 FullName récupéré : " + session.getAttribute("fullName") + "<br>");
 
 
 if (role == null || fullName == null) { 
@@ -23,6 +23,6 @@ if (role == null || fullName == null) {
 <title>Insert title here</title>
 </head>
 <body>
-<h1>welcome to the patientDashboard</h1>
+  <h1>welcome to the doctorDashboard</h1>
 </body>
 </html>

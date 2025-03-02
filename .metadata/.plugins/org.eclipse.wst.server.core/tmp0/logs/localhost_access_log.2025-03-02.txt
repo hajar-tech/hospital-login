@@ -30,3 +30,14 @@
 0:0:0:0:0:0:0:1 - - [02/Mar/2025:01:08:06 +0000] "GET /Hospital/login.jsp HTTP/1.1" 200 1483
 0:0:0:0:0:0:0:1 - - [02/Mar/2025:01:08:20 +0000] "POST /Hospital/login HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [02/Mar/2025:01:08:20 +0000] "GET /Hospital/patientDashboard.jsp HTTP/1.1" 200 328
+127.0.0.1 - - [02/Mar/2025:01:31:20 +0000] "GET / HTTP/1.1" 404 681
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:01:31:20 +0000] "GET /Hospital/ HTTP/1.1" 200 1868
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:01:31:26 +0000] "GET /Hospital/registration.jsp HTTP/1.1" 200 3711
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:01:32:06 +0000] "POST /Hospital/registration HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:01:32:06 +0000] "GET /Hospital/registration.jsp?error=1 HTTP/1.1" 200 3711
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:01:32:23 +0000] "POST /Hospital/registration HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:01:32:23 +0000] "GET /Hospital/registration.jsp?error=1 HTTP/1.1" 200 3711
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:01:33:03 +0000] "POST /Hospital/registration HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:01:33:03 +0000] "GET /Hospital/login.jsp HTTP/1.1" 200 1483
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:01:33:20 +0000] "POST /Hospital/login HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:01:33:20 +0000] "GET /Hospital/patientDashboard.jsp HTTP/1.1" 200 331

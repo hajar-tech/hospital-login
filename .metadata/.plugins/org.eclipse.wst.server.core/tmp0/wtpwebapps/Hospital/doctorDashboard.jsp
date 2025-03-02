@@ -6,9 +6,9 @@
 <%
     String role = (String) session.getAttribute("role");
 String fullName = (String) session.getAttribute("fullName"); 
-out.println("🟢 Debug - Session ID : " + session.getId() + "<br>");
-out.println("🟢 Role récupéré : " + session.getAttribute("role") + "<br>");
-out.println("🟢 FullName récupéré : " + session.getAttribute("fullName") + "<br>");
+out.println("Debug - Session ID : " + session.getId() + "<br>");
+out.println("Role récupéré : " + session.getAttribute("role") + "<br>");
+out.println("FullName récupéré : " + session.getAttribute("fullName") + "<br>");
 
 
 if (role == null || fullName == null) { 
