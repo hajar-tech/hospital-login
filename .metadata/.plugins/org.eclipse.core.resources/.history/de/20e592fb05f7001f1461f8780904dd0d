@@ -33,32 +33,36 @@ public class UserDao {
 
             // After inserting into the user table, check if the role is "DOCTOR"
             if ("DOCTOR".equalsIgnoreCase(user.getRole())) {
-                // Insert into the doctor table if the role is DOCTOR
+                // Insérer dans la table doctor si le rôle est DOCTOR
                 String doctorQuery = "INSERT INTO hospital.doctor (idUser, specialization) VALUES (?, ?)";
                 PreparedStatement pstDoctor = connection.prepareStatement(doctorQuery);
+                
+                pstDoctor.setInt(1, userId); // Utilise l'ID récupéré de l'utilisateur
+                pstDoctor.setString(2, speciality); 
 
-                // Retrieve the generated user id (assuming auto-increment)
-                pstDoctor.setInt(1, getGeneratedUserId(connection)); // Retrieve last inserted id
-                pstDoctor.setString(2, speciality); // Set the specialization for the doctor
-
-                int doctorResult = pstDoctor.executeUpdate(); // Insert doctor details
+                int doctorResult = pstDoctor.executeUpdate();
 
                 if (doctorResult > 0) {
                     System.out.println("Doctor details added successfully.");
                 } else {
                     System.out.println("Error inserting doctor details.");
                 }
-            }else {
-            	String patientQuery = "INSERT INTO hospital.patient (idUser) VALUES (?)";
-            	PreparedStatement pstPatient = connection.prepareStatement(patientQuery);
-            	pstPatient.setInt(1, getGeneratedUserId(connection));
-            	int patientResult = pstPatient.executeUpdate();
-            	if (patientResult > 0 ) {
-            		System.out.println("Patient details added successfully.");
-            	}else {
+            } else if ("PATIENT".equalsIgnoreCase(user.getRole())) {
+                // Insérer dans la table patient si le rôle est PATIENT
+                String patientQuery = "INSERT INTO hospital.patient (idUser) VALUES (?)";
+                PreparedStatement pstPatient = connection.prepareStatement(patientQuery);
+                
+                pstPatient.setInt(1, userId); // Utilise l'ID récupéré de l'utilisateur
+
+                int patientResult = pstPatient.executeUpdate();
+                
+                if (patientResult > 0) {
+                    System.out.println("Patient details added successfully.");
+                } else {
                     System.out.println("Error inserting patient id.");
                 }
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

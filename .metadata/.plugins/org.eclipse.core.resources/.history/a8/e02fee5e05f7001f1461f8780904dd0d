@@ -49,7 +49,7 @@ public class UserDao {
                     System.out.println("Error inserting doctor details.");
                 }
             }else {
-            	String patientQuery = "INSERT INTO hospital.patient (idUser) VALUES (?)";
+            	String patientQuery = "INSERT INTO hospital.patient idUser = ?";
             	PreparedStatement pstPatient = connection.prepareStatement(patientQuery);
             	pstPatient.setInt(1, getGeneratedUserId(connection));
             	int patientResult = pstPatient.executeUpdate();
