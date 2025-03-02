@@ -1,0 +1,14 @@
+package moduls;
+
+public class User {
+      
+	int idUser;
+	String fullName;
+	String email;
+	String password;
+	String phoneNumber;
+	String role;
+	
+	
+	public User ()
+}

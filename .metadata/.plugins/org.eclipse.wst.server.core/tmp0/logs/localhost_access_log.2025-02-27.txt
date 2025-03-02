@@ -15,3 +15,16 @@
 0:0:0:0:0:0:0:1 - - [27/Feb/2025:15:40:57 +0000] "GET /Hospital/registration.jsp HTTP/1.1" 200 3587
 0:0:0:0:0:0:0:1 - - [27/Feb/2025:15:41:05 +0000] "GET /Hospital/login.jsp HTTP/1.1" 200 1987
 0:0:0:0:0:0:0:1 - - [27/Feb/2025:15:41:28 +0000] "POST /Hospital/LoginServlet HTTP/1.1" 404 706
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:17:22:51 +0000] "GET /Hospital/ HTTP/1.1" 200 1868
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:17:22:55 +0000] "GET /Hospital/registration.jsp HTTP/1.1" 200 3584
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:17:23:06 +0000] "POST /Hospital/registration HTTP/1.1" 404 706
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:17:24:15 +0000] "POST /Hospital/registration HTTP/1.1" 404 706
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:17:24:50 +0000] "GET /Hospital/registration HTTP/1.1" 404 706
+127.0.0.1 - - [27/Feb/2025:17:27:48 +0000] "GET / HTTP/1.1" 404 681
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:17:27:49 +0000] "GET /Hospital/ HTTP/1.1" 200 1868
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:17:27:53 +0000] "GET /Hospital/registration.jsp HTTP/1.1" 200 3584
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:17:28:01 +0000] "POST /Hospital/registration HTTP/1.1" 200 23
+127.0.0.1 - - [27/Feb/2025:17:37:21 +0000] "GET / HTTP/1.1" 404 681
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:17:37:22 +0000] "GET /Hospital/ HTTP/1.1" 200 1868
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:17:37:24 +0000] "GET /Hospital/registration.jsp HTTP/1.1" 200 3584
+0:0:0:0:0:0:0:1 - - [27/Feb/2025:17:37:49 +0000] "POST /Hospital/registration HTTP/1.1" 200 -

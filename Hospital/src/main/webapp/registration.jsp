@@ -24,22 +24,26 @@
             <!-- Email -->
             <div>
                 <label class="block text-gray-700 font-semibold">Email:</label>
-                <input type="email" name="email" required
-                    class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+               
+                     <input type="email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                        class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
             </div>
 
             <!-- Mot de Passe -->
             <div>
                 <label class="block text-gray-700 font-semibold">Mot de Passe:</label>
-                <input type="password" name="password" required
+                <input type="password" name="password" required minlength="8"
                     class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
 
             <!-- Numéro de Téléphone -->
             <div>
                 <label class="block text-gray-700 font-semibold">Numéro de Téléphone:</label>
-                <input type="text" name="phoneNumber" required
-                    class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+              
+                      <input type="tel" name="phoneNumber" required
+                         class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
             </div>
 
             <!-- Rôle -->
@@ -47,8 +51,8 @@
                 <label class="block text-gray-700 font-semibold">Rôle:</label>
                 <select name="role" id="role" onchange="toggleSpeciality()"
                     class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <option value="PATIENT">Patient</option>
-                    <option value="DOCTOR">Médecin</option>
+                    <option value="PATIENT">PATIENT</option>
+                    <option value="DOCTOR">DOCTOR</option>
                 </select>
             </div>
 

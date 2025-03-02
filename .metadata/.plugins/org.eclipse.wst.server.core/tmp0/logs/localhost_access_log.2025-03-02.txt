@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:00:32:38 +0000] "POST /Hospital/login HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:00:32:38 +0000] "GET /Hospital/patientDashboard.jsp HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:00:32:38 +0000] "GET /Hospital/login.jsp?error=sessionExpired HTTP/1.1" 200 1567
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:00:34:24 +0000] "POST /Hospital/login HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:00:34:24 +0000] "GET /Hospital/patientDashboard.jsp HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [02/Mar/2025:00:34:24 +0000] "GET /Hospital/login.jsp?error=sessionExpired HTTP/1.1" 200 1567

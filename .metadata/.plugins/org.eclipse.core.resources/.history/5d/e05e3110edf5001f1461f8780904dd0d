@@ -1,0 +1,23 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import moduls.User;
+
+public class LoginDao {
+	
+	public void getUserById(User user) {
+		
+		String query = "setect * from user where email = ? and password = ?";
+		try {
+		Connection connection = DataBaseConnection.getConnection();
+		
+		PreparedStatement pdst = connection.prepareStatement(query);
+	}catch(Exeption e) {
+		
+	}
+		
+	}
+
+}

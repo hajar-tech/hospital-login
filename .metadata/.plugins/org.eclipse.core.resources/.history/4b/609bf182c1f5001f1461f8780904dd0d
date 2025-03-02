@@ -1,0 +1,16 @@
+package dao;
+
+import java.sql.Connection;
+
+public class UserDao {
+	
+	
+	try {
+		
+		Connection connection = DataBaseConnection.getConnection();
+		
+	}catch() {
+		
+	}
+
+}

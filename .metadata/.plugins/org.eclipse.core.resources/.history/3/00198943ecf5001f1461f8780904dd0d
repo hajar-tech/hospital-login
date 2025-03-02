@@ -1,0 +1,12 @@
+package dao;
+
+import moduls.User;
+
+public class LoginDao {
+	
+	public void getUserById(User user) {
+		
+		String query = "setect * from user where email = ? and password = ?";
+	}
+
+}

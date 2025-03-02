@@ -1,0 +1,85 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import moduls.User;
+import moduls.Doctor;
+
+public class UserDao {
+    
+    // Insert user into the 'user' table and get generated idUser
+    public int insertUser(User user) {
+        int generatedId = 0; // Initialize to 0, will be updated with generated idUser
+
+        String query = "INSERT INTO user (fullName, email, password, phoneNumber, role) VALUES (?, ?, ?, ?, ?)";
+        
+        try (Connection connection = DataBaseConnection.getConnection();
+             PreparedStatement pst = connection.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS)) {
+
+            System.out.println("Connection successful!");
+
+            // Set parameters for the user
+            pst.setString(1, user.getFullName());
+            pst.setString(2, user.getEmail());
+            pst.setString(3, user.getPassword());
+            pst.setString(4, user.getPhoneNumber());
+            pst.setString(5, user.getRole());
+
+            // Execute the insert
+            int rowsAffected = pst.executeUpdate();
+
+            // If the insert was successful, retrieve the generated idUser
+            if (rowsAffected > 0) {
+                try (ResultSet rs = pst.getGeneratedKeys()) {
+                    if (rs.next()) {
+                        generatedId = rs.getInt(1);  // Get the idUser
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return generatedId; // Return the generated idUser
+    }
+
+    // Insert Doctor into the doctor table
+    public int insertDoctor(Doctor doctor) {
+        int userId = insertUser(doctor);  // Insert the user first to get the idUser
+
+        if (userId > 0) {
+            String query = "INSERT INTO doctor (userId, specialization) VALUES (?, ?)";
+            try (Connection connection = DataBaseConnection.getConnection();
+                 PreparedStatement pst = connection.prepareStatement(query)) {
+
+                pst.setInt(1, userId);  // Set the idUser
+                pst.setString(2, doctor.getSpecialization()); // Set the specialization
+                return pst.executeUpdate();  // Insert into the doctor table
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return 0;  // Return 0 if insertion failed
+    }
+
+    // Insert Patient into the patient table
+    public int insertPatient(User user) {
+        int userId = insertUser(user);  // Insert the user first to get the idUser
+
+        if (userId > 0) {
+            String query = "INSERT INTO patient (userId) VALUES (?)";
+            try (Connection connection = DataBaseConnection.getConnection();
+                 PreparedStatement pst = connection.prepareStatement(query)) {
+
+                pst.setInt(1, userId);  // Set the idUser
+                return pst.executeUpdate();  // Insert into the patient table
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return 0;  // Return 0 if insertion failed
+    }
+}

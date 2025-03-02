@@ -1,0 +1,80 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import moduls.User;
+import moduls.Doctor;
+
+public class UserDao {
+
+    public int insertUser(User user, String speciality) {
+        int result = 0;
+        String query = "INSERT INTO user (fullName, email, password, phoneNumber, role) VALUES (?, ?, ?,?, ?)";
+        
+        // Ensure that the connection is properly managed and closed after the operation
+        try (Connection connection = DataBaseConnection.getConnection()) {
+
+            if (connection == null) {
+                System.out.println("Database not connected!!");
+                return 0; // Stop here if connection is null
+            }
+
+            // First, insert into the user table
+            PreparedStatement pst = connection.prepareStatement(query);
+            pst.setString(1, user.getFullName());
+            pst.setString(2, user.getEmail());
+            pst.setString(3, user.getPassword());
+            pst.setString(4, user.getPhoneNumber());
+            pst.setString(5, user.getRole());
+
+            result = pst.executeUpdate(); // Insert user into the user table
+
+            // After inserting into the user table, check if the role is "DOCTOR"
+            if ("DOCTOR".equalsIgnoreCase(user.getRole())) {
+                // Insert into the doctor table if the role is DOCTOR
+                String doctorQuery = "INSERT INTO hospital.doctor (idUser, specialization) VALUES (?, ?)";
+                PreparedStatement pstDoctor = connection.prepareStatement(doctorQuery);
+
+                // Retrieve the generated user id (assuming auto-increment)
+                pstDoctor.setInt(1, getGeneratedUserId(connection)); // Retrieve last inserted id
+                pstDoctor.setString(2, speciality); // Set the specialization for the doctor
+
+                int doctorResult = pstDoctor.executeUpdate(); // Insert doctor details
+
+                if (doctorResult > 0) {
+                    System.out.println("Doctor details added successfully.");
+                } else {
+                    System.out.println("Error inserting doctor details.");
+                }
+            }else {
+            	String patientQuery = "INSERT INTO hospital.patient idUser = ?";
+            	PreparedS
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    // Helper method to get the last inserted user ID
+    private int getGeneratedUserId(Connection connection) {
+        int idUser = 0;
+        try {
+            String query = "SELECT LAST_INSERT_ID()";  // Get the last inserted ID for the user table
+            PreparedStatement pst = connection.prepareStatement(query);
+            
+            // Explicitly define the type for the ResultSet
+            ResultSet rs = pst.executeQuery();  // Use ResultSet here instead of var
+            
+            if (rs.next()) {
+                idUser = rs.getInt(1);  // Get the ID
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return idUser;
+    }
+
+}

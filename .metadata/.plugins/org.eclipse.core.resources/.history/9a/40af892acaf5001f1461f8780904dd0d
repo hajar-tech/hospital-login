@@ -1,0 +1,58 @@
+package servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import dao.UserDao;
+import moduls.User;
+
+/**
+ * Servlet implementation class registration
+ */
+@WebServlet("/registration")
+public class registration extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+  
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		
+	String fullname = request.getParameter("fullName");
+	String email = request.getParameter("email");
+	String password = request.getParameter("password");
+	String phoneNumber = request.getParameter("phoneNumber");
+	String role = request.getParameter("role");
+	String speciality = request.getParameter("speciality");
+	
+	PrintWriter out = response.getWriter();
+	out.print(fullname);
+	out.print(email);
+	out.print(password);
+	out.print(phoneNumber);
+	out.print(role);
+	out.print(speciality);
+	
+	User user = new User();
+	 user.setFullName(fullname);
+	 user.setEmail(email);
+	 user.setPassword(password);
+	 user.setPhoneNumber(phoneNumber);
+	 user.setRole(role);
+	 
+	 UserDao userdao = new UserDao();
+	  int result = userdao.insertUser(user);
+	  if (result>0) {
+		  response.sendRedirect(login.jsp);
+	  }
+	 
+		
+	}
+
+}

@@ -1,0 +1,8 @@
+package moduls;
+
+public class User {
+      
+	int idUser;
+	String fullName;
+	String email
+}

@@ -1,0 +1,34 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import moduls.User;
+
+public class UserDao {
+	
+	public int insertUser(User user) {
+		
+		int result = 0;
+        String query = "INSERT INTO user (fullName, email,  password, phoneNumber, role) VALUES (?, ?, ?,?, ?)";
+	
+	try {
+		
+		Connection connection = DataBaseConnection.getConnection();
+		
+		if(connection == null) {
+    		System.out.println("database not connected!!");
+    	    return 0; // Arrêter ici si la connexion est nulle
+    	} else {
+    	    System.out.println("Connexion réussie à la base de données !");
+    	}
+		
+		PreparedStatement pst = connection.prepareStatement(query);
+		pst.setString(1, query);
+		
+	}catch() {
+		
+	}
+	}
+
+}
